@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.params=x1\ y1\ x2\ y2\ x3\ y3\ c
+comment0.target=Triangle(int,\ int,\ int,\ int,\ int,\ int,\ java.awt.Color)
+numComments=1

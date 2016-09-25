@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.params=x\ y\ size\ c
+comment0.target=Circle(int,\ int,\ int,\ java.awt.Color)
+numComments=1

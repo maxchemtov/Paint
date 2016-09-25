@@ -1,0 +1,15 @@
+import java.awt.*;
+
+public class Rectangle extends Shape
+{
+    int xPos, yPos, width, height;
+    public Rectangle(int xPos, int yPos, int width, int height, Color c)
+    {
+        super.type = 0;
+        super.colour = c;
+        this.xPos = xPos;
+        this.yPos = yPos;
+        this.width = width;
+        this.height = height;
+    }
+}

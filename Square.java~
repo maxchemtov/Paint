@@ -1,0 +1,14 @@
+import java.awt.*;
+
+public class Square extends Shape
+{
+    int xPos, yPos, size;
+    public Square(int xPos, int yPos, int size, Color c)
+    {
+        super.type = 2;
+        super.colour = c;
+        this.xPos = xPos;
+        this.yPos = yPos;
+        this.size = size;
+    }
+}

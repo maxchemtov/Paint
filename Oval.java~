@@ -1,0 +1,15 @@
+import java.awt.*;
+
+public class Oval extends Shape
+{
+    int xPos, yPos, width, height;
+    public Oval(int xPos, int yPos, int width, int height, Color c)
+    {
+        super.type = 1;
+        super.colour = c;
+        super.x1 = xPos;
+        super.y1 = yPos;
+        super.width = width;
+        super.height = height;
+    }
+}

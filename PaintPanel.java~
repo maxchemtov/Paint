@@ -1,0 +1,172 @@
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+import java.util.*;
+public class PaintPanel extends JPanel
+{
+    private ArrayList<Shape> shapes = new ArrayList<Shape>();
+    private final int RECTANGLE = 0;
+    private final int OVAL = 1;
+    private final int SQUARE = 2;
+    private final int TRIANGLE = 3;
+    private final int TRAPEZOID = 4;
+    private final int LINE = 5;
+    private final int MOVE = 6;
+    private int shape = LINE;
+    private Color colour = new Color(0, 0, 0);
+    private JPanel panelButtons = new JPanel();
+    private JPanel panelDraw = new JPanel();
+    private JButton buttonRectangle = new JButton("\u25AC");
+    private JButton buttonOval = new JButton("\u25CF");
+    private JButton buttonSquare = new JButton("\u25A0");
+    private JButton buttonTriangle = new JButton("\u25B2");
+    private JButton buttonTrapezoid = new JButton("");
+    private JButton buttonLine = new JButton("\u007C");
+    private JButton buttonMove = new JButton("Move");
+    private JButton buttonClear = new JButton("Clear");
+    private JButton buttonColour = new JButton();
+    private BorderLayout layout = new BorderLayout();
+    private ActionHandler actions = new ActionHandler();
+    private MouseHandler mouse = new MouseHandler();
+    private MotionHandler motion = new MotionHandler();
+
+    public PaintPanel()
+    {     
+        buttonRectangle.addActionListener(actions);
+        buttonOval.addActionListener(actions);
+        buttonSquare.addActionListener(actions);
+        buttonTriangle.addActionListener(actions);
+        buttonTrapezoid.addActionListener(actions);
+        buttonLine.addActionListener(actions);
+        buttonMove.addActionListener(actions);
+        buttonClear.addActionListener(actions);
+        buttonColour.addActionListener(actions);
+        panelButtons.add(buttonRectangle);
+        panelButtons.add(buttonOval);
+        panelButtons.add(buttonSquare);
+        panelButtons.add(buttonTriangle);
+        panelButtons.add(buttonTrapezoid);
+        panelButtons.add(buttonLine);
+        panelButtons.add(buttonMove);
+        panelButtons.add(buttonClear);
+        panelButtons.add(buttonColour);
+        
+        panelDraw.setBackground(Color.WHITE);
+        panelDraw.addMouseListener(mouse);
+        panelDraw.addMouseMotionListener(motion);
+        
+        setLayout(layout);
+        add(panelButtons, layout.NORTH);
+        add(panelDraw, layout.CENTER);
+    }
+    public void paintComponent(Graphics g)
+    {
+        if(! shapes.isEmpty())
+        {
+            for(int x = 0; x < shapes.size(); x ++)
+            {
+                g.setColor(shapes.get(x).colour);
+                if(shapes.get(x).type == RECTANGLE)
+                {
+                    g.fillRect(shapes.get(x).x1, shapes.get(x).y1, shapes.get(x).width, shapes.get(x).height);
+                }
+                else if(shapes.get(x).type == OVAL)
+                {
+                    g.fillOval(shapes.get(x).x1, shapes.get(x).y1, shapes.get(x).width, shapes.get(y).height);
+                }
+                else if(shapes.get(x).type == SQUARE)
+                {
+                    g.fillRect(shapes.get(x).x1, shapes.get(x).y1, shapes.get(x).width, shapes.get(x).width);
+                }
+                else if(shapes.get(x).type == TRIANGLE)
+                {
+                    
+                }
+                else if(shapes.get(x).type == TRAPEZOID)
+                {
+                    
+                }
+                else if(shapes.get(x).type == LINE)
+                {
+                
+                }
+            }
+        }
+    }
+    public class ActionHandler implements ActionListener
+    {
+        public void actionPerformed(ActionEvent ae)
+        {
+            if(ae.getSource() == buttonRectangle)
+            {
+                shape = RECTANGLE;
+            }
+            else if(ae.getSource() == buttonOval)
+            {
+                shape = OVAL;
+            }
+            else if(ae.getSource() == buttonSquare)
+            {
+                shape = SQUARE;
+            }
+            else if(ae.getSource() == buttonTriangle)
+            {
+                shape = TRIANGLE;
+            }
+            else if(ae.getSource() == buttonTrapezoid)
+            {
+                shape = TRAPEZOID;
+            }
+            else if(ae.getSource() == buttonLine)
+            {
+                shape = LINE;
+            }
+            else if(ae.getSource() == buttonMove)
+            {
+                shape = MOVE;
+            }
+            else if(ae.getSource() == buttonClear)
+            {
+                shapes.clear();
+            }
+            else if(ae.getSource() == buttonColour)
+            {
+                
+            }
+        }
+    }
+    public class MouseHandler implements MouseListener
+    {
+        public void mouseEntered(MouseEvent me)
+        {
+            
+        }
+        public void mouseExited(MouseEvent me)
+        {
+            
+        }
+        public void mousePressed(MouseEvent me)
+        {
+            
+        }
+        public void mouseReleased(MouseEvent me)
+        {
+            
+        }
+        public void mouseClicked(MouseEvent me)
+        {
+            
+        }
+    }
+    public class MotionHandler implements MouseMotionListener
+    {
+        public void mouseMoved(MouseEvent me)
+        {
+            
+        }
+        public void mouseDragged(MouseEvent me)
+        {
+            
+        }
+    }
+}
